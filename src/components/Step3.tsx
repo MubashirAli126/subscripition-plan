@@ -38,53 +38,56 @@ console.log(formData.dob);
     <Form onSubmit={handleSubmit(onHandleFormSubmit)}>
 
       <Form.Select {...register("plan")} required={true} value={selectedValue} onChange={handleSelectChange} aria-label="Floating label select example mt-3" >
-        <option>Open this select menu</option>
-        <option value="1">Basic</option>
-        <option value="2">Standard</option>
-        <option value="3">Pro</option>
+        <option>select Plan</option>
+        <option value="1">Silver</option>
+        <option value="2">Gold</option>
+        <option value="3">Platinum</option>
       </Form.Select>
 
     <Row className="justify-content-center mt-4">
         <Col md={4}>
           <Card className="text-center mb-4">
-            <Card.Header>Basic Plan</Card.Header>
+            <Card.Header>Silver Plan</Card.Header>
             <Card.Body>
               <Card.Title>$9.99/month</Card.Title>
-              <Card.Text>Access to basic features</Card.Text>
+              <Card.Text>Access to silver features</Card.Text>
               <ul className="list-unstyled">
                 <li>Feature 1</li>
                 <li>Feature 2</li>
                 <li>Feature 3</li>
               </ul>
             </Card.Body>
+            <Card.Footer>Buy Now</Card.Footer>
           </Card>
         </Col>
         <Col md={4}>
           <Card className="text-center mb-4">
-            <Card.Header>Standard Plan</Card.Header>
-            <Card.Body>
-              <Card.Title>$9.99/month</Card.Title>
-              <Card.Text>Access to basic features</Card.Text>
-              <ul className="list-unstyled">
-                <li>Feature 1</li>
-                <li>Feature 2</li>
-                <li>Feature 3</li>
-              </ul>
-            </Card.Body>
-          </Card>
-        </Col>
-        <Col md={4}>
-          <Card className="text-center mb-4">
-            <Card.Header>Pro Plan</Card.Header>
+            <Card.Header style={{backgroundColor: 'gold'}}>Gold Plan</Card.Header>
             <Card.Body>
               <Card.Title>$19.99/month</Card.Title>
-              <Card.Text>Access to features</Card.Text>
+              <Card.Text>Access to gold features</Card.Text>
               <ul className="list-unstyled">
                 <li>Feature 1</li>
                 <li>Feature 2</li>
                 <li>Feature 3</li>
               </ul>
             </Card.Body>
+            <Card.Footer style={{backgroundColor: 'gold'}}>Buy Now</Card.Footer>
+          </Card>
+        </Col>
+        <Col md={4}>
+          <Card className="text-center mb-4">
+            <Card.Header style={{backgroundColor: 'black', color:"white"}}>Platinum Plan</Card.Header>
+            <Card.Body>
+              <Card.Title>$29.99/month</Card.Title>
+              <Card.Text>Access to platinum features</Card.Text>
+              <ul className="list-unstyled">
+                <li>Feature 1</li>
+                <li>Feature 2</li>
+                <li>Feature 3</li>
+              </ul>
+            </Card.Body>
+            <Card.Footer style={{backgroundColor: 'black', color:"white"}}>Buy Now</Card.Footer>
           </Card>
         </Col>
       </Row>
