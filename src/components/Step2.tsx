@@ -1,5 +1,6 @@
 import { useForm } from "react-hook-form";
 import { useFormState } from "./FormContext";
+import {Form, Button} from 'react-bootstrap';
 
 type TFormValues = {
   dob: string;
@@ -18,39 +19,23 @@ export function Step2() {
   };
 
   return (
-    <form
-      className="flex gap-1 flex-col"
-      onSubmit={handleSubmit(onHandleFormSubmit)}
-    >
-      <label htmlFor="email">Date of Birth</label>
-      <input
-        autoFocus
-        id="dob"
-        {...register("dob")}
-        className="border h-11 px-4 rounded-md focus:outline-blue-500 "
-        required={true}
-      />
-      <label htmlFor="phoneNumber">Phone Number</label>
-      <input
-        autoFocus
-        id="phoneNumber"
-        {...register("phoneNumber")}
-        className="border h-11 px-4 rounded-md focus:outline-blue-500 "
-        required={true}
-      />
-      
-      <div className="flex gap-4 justify-end mt-4">
-        <button
-          type="button"
-          onClick={onHandleBack}
-          className="h-11 px-6 inline-block bg-blue-600 font-semibold text-white rounded-md"
-        >
-          Back
-        </button>
-        <button className="h-11 px-6 inline-block bg-blue-600 font-semibold text-white rounded-md">
-          Next
-        </button>
-      </div>
-    </form>
+    <>
+    <Form onSubmit={handleSubmit(onHandleFormSubmit)}>
+    <Form.Group className="mb-3" controlId="formBasicDob">
+        <Form.Label>Date of Birth</Form.Label>
+        <Form.Control type="date" {...register("dob")} autoFocus required={false} placeholder="Date of birth" />
+      </Form.Group>
+      <Form.Group className="mb-3" controlId="formBasicEmail">
+        <Form.Label>Phone Number</Form.Label>
+        <Form.Control type="tel" maxLength="10" {...register("phoneNumber")} required={false} placeholder="Enter Phone Number" />
+      </Form.Group>
+      <Button variant="primary" type="submit" className="float-right">
+        Next
+      </Button>
+      <Button onClick={onHandleBack}>
+        Back
+      </Button>
+    </Form>
+    </>
   );
 }

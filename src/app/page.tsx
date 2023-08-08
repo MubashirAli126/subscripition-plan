@@ -3,6 +3,7 @@ import { Step2 } from "~/components/Step2";
 import { useFormState } from "~/components/FormContext";
 import { Step3 } from "~/components/Step3";
 import { Step1 } from "~/components/Step1";
+import { Card, Col, Row } from "react-bootstrap";
 
 function ActiveStepFormComponent() {
   const { step } = useFormState();
@@ -20,15 +21,20 @@ function ActiveStepFormComponent() {
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="p-6 w-full max-w-2xl  border  rounded-xl bg-white">
-        <h1 className="text-center text-2xl font-semibold py-4">
-          Sign Up Form
-        </h1>
-        <div className="space-y-6">
-          <ActiveStepFormComponent />
-        </div>
-      </div>
-    </main>
+    <>
+    <Row className="d-flex justify-content-center align-items-center mt-5">
+      <Col md={8} lg={6} xs={12}>
+        <Card className="shadow">
+        <Card.Body>
+          <div className="mb-3 md-4">
+            <h2 className="fw-bold mb-2 text-uppercase text-primary text-center ">Subscribe Form</h2>
+            <hr />
+        <ActiveStepFormComponent />
+          </div>
+          </Card.Body>
+        </Card>
+      </Col>
+    </Row>
+    </>
   );
 }

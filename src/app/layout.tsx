@@ -3,6 +3,7 @@
 import { FormProvider } from "~/components/FormContext";
 import "./globals.css";
 import { Inter } from "next/font/google";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,7 +19,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} bg-gray-200/50`}>
+      <body className={`${inter.className}`}>
         <FormProvider>{children}</FormProvider>
       </body>
     </html>
