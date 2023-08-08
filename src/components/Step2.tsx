@@ -4,7 +4,7 @@ import {Form, Button} from 'react-bootstrap';
 
 type TFormValues = {
   dob: string;
-  phoneNumber: string;
+  phoneNumber: number;
 };
 
 export function Step2() {
@@ -27,7 +27,7 @@ export function Step2() {
       </Form.Group>
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label>Phone Number</Form.Label>
-        <Form.Control type="tel" maxLength="10" {...register("phoneNumber")} required={false} placeholder="Enter Phone Number" />
+        <Form.Control type="tel" {...register("phoneNumber")} required={false} placeholder="Enter Phone Number" />
       </Form.Group>
       <Button variant="primary" type="submit" className="float-right">
         Next
