@@ -23,11 +23,11 @@ export function Step2() {
     <Form onSubmit={handleSubmit(onHandleFormSubmit)}>
     <Form.Group className="mb-3" controlId="formBasicDob">
         <Form.Label>Date of Birth</Form.Label>
-        <Form.Control type="date" {...register("dob")} autoFocus required={false} placeholder="Date of birth" />
+        <Form.Control type="date" {...register("dob")} autoFocus required={true} placeholder="Date of birth" />
       </Form.Group>
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label>Phone Number</Form.Label>
-        <Form.Control type="tel" {...register("phoneNumber")} required={false} placeholder="Enter Phone Number" />
+        <Form.Control type="tel" {...register("phoneNumber")} required={true} placeholder="Enter Phone Number" />
       </Form.Group>
       <Button variant="primary" type="submit" className="float-right">
         Next
