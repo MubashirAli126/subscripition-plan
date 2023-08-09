@@ -2,6 +2,7 @@ import { useForm } from "react-hook-form";
 import { useFormState } from "./FormContext";
 import { useState } from "react";
 import {Form, Button, Row, Col, Card } from 'react-bootstrap';
+import styles from '../styles/component.module.css'
 
 type TFormValues = {
   plan: string;
@@ -27,11 +28,32 @@ export function Step3() {
     setFormData((prev: any) => ({ ...prev, ...data }));
     setCreated(true);
   };
-console.log(formData.dob);
+console.log(formData);
   return isCreated ? (
     <>
-      <p>Account created successfully</p>
-      <pre>{JSON.stringify(formData)}</pre>
+      <p style={{fontWeight: 700, textAlign: "center", fontSize: 20}}>Subscribe Plan Successfully</p>
+      <ul>
+        <li>
+          <label style={{fontWeight: 600}}>User Name:</label>
+          <span style={{paddingLeft: 5}}>{formData.username}</span>
+        </li>
+        <li>
+          <label style={{fontWeight: 600}}>Email:</label>
+          <span style={{paddingLeft: 5}}>{formData.email}</span>
+        </li>
+        <li>
+          <label style={{fontWeight: 600}}>Date of Birth:</label>
+          <span style={{paddingLeft: 5}}>{formData.dob}</span>
+        </li>
+        <li>
+          <label style={{fontWeight: 600}}>Phone Number:</label>
+          <span style={{paddingLeft: 5}}> {formData.phoneNumber}</span>
+        </li>
+        <li>
+          <label style={{fontWeight: 600}}>Subscripition Plan:</label>
+          <span style={{paddingLeft: 5}}>{formData.plan}</span>
+        </li>
+      </ul>
     </>
   ) : (
     <>
@@ -39,9 +61,9 @@ console.log(formData.dob);
 
       <Form.Select {...register("plan")} required={true} value={selectedValue} onChange={handleSelectChange} aria-label="Floating label select example mt-3" >
         <option>select Plan</option>
-        <option value="1">Silver</option>
-        <option value="2">Gold</option>
-        <option value="3">Platinum</option>
+        <option value="silver">Silver</option>
+        <option value="gold">Gold</option>
+        <option value="platinum">Platinum</option>
       </Form.Select>
 
     <Row className="justify-content-center mt-4">
@@ -70,6 +92,8 @@ console.log(formData.dob);
                 <li>Feature 1</li>
                 <li>Feature 2</li>
                 <li>Feature 3</li>
+                <li>Feature 4</li>
+
               </ul>
             </Card.Body>
             <Card.Footer style={{backgroundColor: 'gold'}}>Buy Now</Card.Footer>
@@ -85,14 +109,15 @@ console.log(formData.dob);
                 <li>Feature 1</li>
                 <li>Feature 2</li>
                 <li>Feature 3</li>
+                <li>Feature 4</li>
               </ul>
             </Card.Body>
             <Card.Footer style={{backgroundColor: 'black', color:"white"}}>Buy Now</Card.Footer>
           </Card>
         </Col>
       </Row>
-      <Button onClick={onHandleBack}> Back </Button>
-      <Button type="submit"  className="float-right">Create</Button>
+      <Button type="submit" className={styles.btnNext}>Create</Button>
+      <Button onClick={onHandleBack} className={styles.btnBack}>Back</Button>
     </Form>
     </>
   );

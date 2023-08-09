@@ -1,6 +1,7 @@
 import { useForm } from "react-hook-form";
 import { useFormState } from "./FormContext";
 import {Form, Button} from 'react-bootstrap';
+import styles from '../styles/component.module.css'
 
 type TFormValues = {
   dob: string;
@@ -27,12 +28,12 @@ export function Step2() {
       </Form.Group>
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label>Phone Number</Form.Label>
-        <Form.Control type="tel" {...register("phoneNumber")} required={true} placeholder="Enter Phone Number" />
+        <Form.Control type="number" {...register("phoneNumber")} required={true} placeholder="Enter Phone Number" />
       </Form.Group>
-      <Button variant="primary" type="submit" className="float-right">
+      <Button variant="primary" type="submit" className={styles.btnNext}>
         Next
       </Button>
-      <Button onClick={onHandleBack}>
+      <Button onClick={onHandleBack} className={styles.btnBack}>
         Back
       </Button>
     </Form>

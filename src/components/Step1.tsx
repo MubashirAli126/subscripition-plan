@@ -1,6 +1,7 @@
 import { useForm } from "react-hook-form";
 import { useFormState } from "./FormContext";
 import {Form, Button} from 'react-bootstrap';
+import styles from '../styles/component.module.css'
 
 type TFormValues = {
   username: string;
@@ -33,7 +34,7 @@ export function Step1() {
           We will never share your email with anyone else.
         </Form.Text>
       </Form.Group>
-      <Button variant="primary" type="submit" className="float-right">
+      <Button variant="primary" type="submit" className={styles.btnNext}>
         Next
       </Button>
     </Form>

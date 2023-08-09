@@ -1,0 +1,10 @@
+.btnNext {
+  background-color: #3096ff;
+  float: right;
+}
+
+.btnBack {
+  background-color: #2f4a5a;
+  float: right;
+  margin-right: 10px;
+}
